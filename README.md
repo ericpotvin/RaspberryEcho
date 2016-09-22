@@ -20,8 +20,8 @@ You need to obtain a set of credentials from Amazon to use the Alexa Voice servi
  2. Go to Alexa then Alexa Voice Service.
  3. Create a new product type as a Device and give it a name. 
  4. Create a new security profile,
- 4.1. Under the web settings allowed origins put http://localhost:5000 and/or http://my_ip_address:5000
- 4.2. Under return URL put http://localhost:5000/code and/or http://my_ip_address:5000
+ 5. Under the web settings allowed origins put http://localhost:5000 and/or http://my_ip_address:5000
+ 6. Under return URL put http://localhost:5000/code and/or http://my_ip_address:5000
 
 ## Install Required Packages
 
@@ -36,13 +36,15 @@ sudo pip install -r requirements.txt
 ## Setup the service
 ```
 chmod +x service_raspberryecho.sh
-cp service_raspberryecho.sh /etc/init.d/RaspberryEcho
-update-rc.d RaspberryEcho defaults
-touch /var/log/alexa.log
+sudo cp service_raspberryecho.sh /etc/init.d/RaspberryEcho
+sudo update-rc.d RaspberryEcho defaults
+touch /var/log/raspberryecho.log
 ```
 
 ## Authenticate
 Open the *amazon.ini* and fill out the values with your credentials.
+
+Then run,
 
 ```
 python ./authenticate.py
