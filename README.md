@@ -50,14 +50,18 @@ Then run,
 python ./authenticate.py
 ```
 
-## Verify
+## Authenticate via URL
 
 Get your IP
-```
+```,
 echo $(hostname -I)
 ```
 
-Then, Open http://my_ip_address:5000/code
+Then, Open http://my_ip_address:5000/
+
+A screen will open. At this point you have to "ALLOW" the application.
+
+Once, approved, you will get a Success with you token
 
 # Test it
 
